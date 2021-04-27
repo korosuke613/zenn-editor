@@ -4,19 +4,30 @@ import { MainContainer } from '@components/MainContainer';
 import { ContentWrapper } from '@components/ContentWrapper';
 import { NavCollections } from '@types';
 import { getAllContentsNavCollections } from '@utils/nav-collections';
+import { useState } from 'react';
 
 type Props = {
   allContentsNavCollections: NavCollections;
 };
 
 const Page: NextPage<Props> = (props) => {
+  const [shouldShownSideBar, setShouldShownSideBar] = useState(true);
+
+  const toggleSideBar = () => {
+    setShouldShownSideBar((p) => !p);
+  };
+
   return (
     <>
       <Head>
         <title>Zenn Editor</title>
       </Head>
       <div>
-        <MainContainer navCollections={props.allContentsNavCollections}>
+        <MainContainer
+          navCollections={props.allContentsNavCollections}
+          shouldShownSideBar={shouldShownSideBar}
+        >
+          <button onClick={toggleSideBar}>Button</button>
           <article className="home">
             <ContentWrapper>
               <h1 className="home__title">
