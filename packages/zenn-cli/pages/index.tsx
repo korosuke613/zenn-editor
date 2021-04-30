@@ -11,23 +11,13 @@ type Props = {
 };
 
 const Page: NextPage<Props> = (props) => {
-  const [shouldShownSideBar, setShouldShownSideBar] = useState(true);
-
-  const toggleSideBar = () => {
-    setShouldShownSideBar((p) => !p);
-  };
-
   return (
     <>
       <Head>
         <title>Zenn Editor</title>
       </Head>
       <div>
-        <MainContainer
-          navCollections={props.allContentsNavCollections}
-          shouldShownSideBar={shouldShownSideBar}
-        >
-          <button onClick={toggleSideBar}>Button</button>
+        <MainContainer navCollections={props.allContentsNavCollections}>
           <article className="home">
             <ContentWrapper>
               <h1 className="home__title">

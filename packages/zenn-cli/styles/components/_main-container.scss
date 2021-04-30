@@ -10,7 +10,24 @@
   overflow-y: auto;
   border-right: solid 1px $c-gray-border-lighter;
 }
+
+.main-sidebar-mini {
+  @extend .main-sidebar;
+  width: 20px;
+}
+
 .main-content {
   min-width: 375px;
   flex: 1;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  left: 280px;
+  top: 50px;
+}
+
+.sidebar-toggle-mini {
+  @extend .sidebar-toggle;
+  left: 12px;
 }

@@ -10,6 +10,7 @@ import { MainContainer } from '@components/MainContainer';
 import { getAllContentsNavCollections } from '@utils/nav-collections';
 import { getArticleBySlug } from '@utils/api/articles';
 import { Article, NavCollections } from '@types';
+import { useState } from 'react';
 
 type Props = {
   article: Article;
